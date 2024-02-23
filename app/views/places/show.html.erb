@@ -1,17 +1,10 @@
-<h1>Places I've been</h1>
-
-<a href="/madrid">Madrid</a>
-<a href="/newyork">New York</a>
-<a href="/Chicago">Chicago</a>
-
-<% places = ["Madrid", "Barcelona", "New York", "Chicago"] %>
-
+<h1><%= @place.name %></h1>
+<p><%= link_to 'Edit', edit_place_path(@place) %> | <%= link_to 'Back', places_path %></p>
+<p>Entries:</p>
 <ul>
-  <% for places in places %>
-    <li><%= places %></li>
-    <li>
-      <a href="/activities/<%= places["id"] %>"><%= places["name"] %></a>
-    </li>
+  <% @entries.each do |entry| %>
+    <li><b><%= entry.title %></b> (<%= entry.date %>) - <%= entry.description %></li>
   <% end %>
-
-<p>Find me in app/views/places/show.html.erb</p>
+</ul>
+<br>
+<%= link_to 'Add a new entry', new_place_entry_path(@place) %>
