@@ -4,4 +4,11 @@
 <a href="/newyork">New York</a>
 <a href="/Chicago">Chicago</a>
 
+<% places = ["Madrid", "Barcelona", "New York", "Chicago"] %>
+
+<ul>
+  <% for places in places %>
+    <li><%= places %></li>
+  <% end %>
+
 <p>Find me in app/views/places/show.html.erb</p>
