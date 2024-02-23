@@ -9,6 +9,9 @@
 <ul>
   <% for places in places %>
     <li><%= places %></li>
+    <li>
+      <a href="/activities/<%= places["id"] %>"><%= places["name"] %></a>
+    </li>
   <% end %>
 
 <p>Find me in app/views/places/show.html.erb</p>
