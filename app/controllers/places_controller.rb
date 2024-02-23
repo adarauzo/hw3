@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
 
   def index
-    @places = name.all
+    @places = places.find_by({ "id" => params["id"] })
   end
-  
+
 end
