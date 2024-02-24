@@ -10,8 +10,8 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
-    @entry = @place.entries.new  # Initialize @entry
   end
+  
 
   def create
     @place = Place.new(place_params)

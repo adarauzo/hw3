@@ -10,8 +10,10 @@ class EntriesController < ApplicationController
   end
 
   def new
+    @place = Place.find(params[:place_id])
     @entry = @place.entries.new
   end
+  
 
   def create
     @entry = @place.entries.new(entry_params)
